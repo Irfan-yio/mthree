@@ -3,16 +3,13 @@
 DATE=$(date +"%d-%m-%y")
 count=0
 
-for i in `ls`
-do
-	if [[($i = usernumbers.$DATE)]]
-	then
-		rm usernumbers.$DATE
-		touch usernumbers.$DATE
-	else
-		touch usernumbers.$DATE
-	fi
-done
+if [ -f "usernumbers.$DATE" ]
+then
+        rm usernumbers.$DATE
+        touch usernumbers.$DATE
+else
+        touch usernumbers.$DATE
+fi
 
 while true
 do 

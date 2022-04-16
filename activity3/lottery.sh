@@ -1,16 +1,13 @@
 #!/bin/sh
 DATE=$(date +"%d-%m-%y")
 
-for i in `ls`
-do
-        if [[($i = lottery.$DATE)]]
-        then
-                rm lottery.$DATE
-                touch lottery.$DATE
-        else
-                touch lottery.$DATE
-        fi
-done
+if [ -f "lottery.$DATE" ]
+then
+	rm lottery.$DATE
+	touch lottery.$DATE
+else
+	touch lottery.$DATE
+fi
 
 while true
 do
