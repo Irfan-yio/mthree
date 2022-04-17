@@ -25,7 +25,7 @@ do
 					continue
 				fi
 			else
-				echo "The password should contain atleast one uppercase letter."
+				echo "The password should contain at least one uppercase letter."
 				continue
 			fi
 		else
