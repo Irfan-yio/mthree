@@ -11,9 +11,10 @@ else
         touch usernumbers.$DATE
 fi
 
+echo "Please enter your 5 lottery numbers"
+
 while true
 do 
-	echo "Please enter your 5 lottery numbers"
 	read draw
 	if [[ ($draw -ge 1 && $draw -le 50) ]]
 	then
