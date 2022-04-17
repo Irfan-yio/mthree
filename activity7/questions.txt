@@ -1,0 +1,10 @@
+In the film “Finding Nemo”, Nemo is a pufferfish.;F
+Mount Kilimanjaro is the world’s tallest peak.;F
+Venezuela is home to the world’s highest waterfall.;T
+The capital of Australia is Sydney.;F
+The longest river in the world is the Amazon River.;F
+Polar bears can only live in the Arctic region, not in the Antarctic.;T
+The United Kingdom is almost the same size as France.;F
+The moon is wider than Australia.;F
+Zeus is referred to as the king of the Greek gods and goddesses.;T
+The goat is used to symbolize the zodiac sign, Capricorn.;T
