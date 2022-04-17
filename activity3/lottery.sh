@@ -9,14 +9,6 @@ else
         touch lottery.$DATE
 fi
 
-if [ -f "bonusball.$DATE" ]
-then
-        rm bonusball.$DATE
-        touch bonusball.$DATE
-else
-        touch bonusball.$DATE
-fi
-
 while true
 do
 	num=`echo $((1 + RANDOM % 50))`
