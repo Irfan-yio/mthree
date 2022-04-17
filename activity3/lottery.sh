@@ -9,6 +9,14 @@ else
         touch lottery.$DATE
 fi
 
+if [ -f "bonusball.$DATE" ]
+then
+        rm bonusball.$DATE
+        touch bonusball.$DATE
+else
+        touch bonusball.$DATE
+fi
+
 while true
 do
 	num=`echo $((1 + RANDOM % 50))`
@@ -18,11 +26,12 @@ do
 	then
 		continue
 	else
-		echo $((1 + RANDOM % 50)) >> lottery.$DATE
+		echo $num >> lottery.$DATE
 		ball=$(wc -l lottery.$DATE | awk '{print$1}')
 		if [ $ball -gt 4 ]
 		then
-			echo $((1 + RANDOM % 10)) >> lottery.$DATE
+			bonusball=`echo $((1 + RANDOM % 10))`  
+			echo $bonusball > bonusball.$DATE
 			break
 		else
 			continue
