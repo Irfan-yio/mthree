@@ -1,32 +1,34 @@
 #!/bin/sh
 
+function numchecker()
+{
+        echo $input | grep [0-9] > /dev/null
+        exit=$(echo $?)
+        echo $input | grep [a-z] > /dev/null
+        exit2=$(echo $?)
+        echo $input | grep [A-Z] > /dev/null
+        exit3=$(echo $?)
+}
+
 while true
 do
-	read -p "Enter your first number: " inputA
-	echo $inputA | grep [0-9] > /dev/null
-	exit=$(echo $?)
-	echo $inputA | grep [a-z] > /dev/null
-        exit2=$(echo $?)
-        echo $inputA | grep [A-Z] > /dev/null
-        exit3=$(echo $?)
+	read -p "Enter your first number: " input
+	var1=$(echo $input)
+	numchecker
         if [[ ($exit == 0 && $exit2 != 0 && $exit3 != 0) ]]
 	then
-		read -p "Enter your second number: " inputB
-		echo $inputB | grep [0-9] > /dev/null
-		exit4=$(echo $?)
-		echo $inputB | grep [a-z] > /dev/null
-		exit5=$(echo $?)
-        	echo $inputB | grep [A-Z] > /dev/null
-        	exit6=$(echo $?)
-        	if [[ ($exit4 == 0 && $exit5 != 0 && $exit6 != 0) ]]
+		read -p "Enter your second number: " input
+		var2=$(echo $input)
+		numchecker
+        	if [[ ($exit == 0 && $exit2 != 0 && $exit3 != 0) ]]
 		then
-			if [ $inputA -gt $inputB ]
+			if [ $var1 -gt $var2 ]
 			then
-				diff=$(( inputA - inputB ))
+				diff=$(( var1 - var2 ))
 				echo "True! Your first number is larger than your second by $diff."
 				break
 			else
-				diff2=$(( inputB - inputA ))
+				diff2=$(( var2 - var1 ))
 				echo "False! Your second number is larger than your first by $diff2."
 				break
 			fi
