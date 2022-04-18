@@ -8,8 +8,7 @@ then
 	read -p "Enter the second file name: " inputB
 	if [ -f $inputB ]
 	then
-		echo $(diff -q $inputA $inputB) > results.txt
-		grep [a-z] results.txt > /dev/null
+		echo $(diff -q $inputA $inputB) | grep [a-z] > /dev/null
 		exit1=$(echo $?)
 		if [ $exit1 == 0 ]
 		then
